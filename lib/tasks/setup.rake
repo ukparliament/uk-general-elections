@@ -14,10 +14,27 @@ task :import => :environment do
     voting_end_on = row[3].to_date
     constituency_name = row[4].strip
     party_name = row[5].strip
-    candidate_name = row[6].strip
+    candidate_name_string = row[6].strip
     is_uncontested = row[7]
     votes = row[8] if row[8]
     turnout = row[9] if row[9]
+    letter_string = candidate_name_string.first
+    surname_string = candidate_name_string.split( ',' ).first
+    
+    letter = Letter.find_by_letter( letter_string )
+    unless letter
+      letter = Letter.new
+      letter.letter = letter_string
+      letter.save
+    end
+    
+    surname = Surname.find_by_surname( surname_string )
+    unless surname
+      surname = Surname.new
+      surname.surname = surname_string
+      surname.letter = letter
+      surname.save
+    end
     
     year = Year.find_by_year( election_year )
     unless year
@@ -50,6 +67,14 @@ task :import => :environment do
       party.save
     end
     
+    candidate_name = CandidateName.find_by_name( candidate_name_string )
+    unless candidate_name
+      candidate_name = CandidateName.new
+      candidate_name.name = candidate_name_string
+      candidate_name.surname = surname
+      candidate_name.save
+    end
+    
     election = Election
       .where( "general_election_id = ?", general_election.id )
       .where( "constituency_id = ?", constituency.id )
@@ -66,16 +91,16 @@ task :import => :environment do
     candidacy = Candidacy
       .where( "election_id = ?", election.id )
       .where( "party_id = ?", party.id )
-      .where( "candidate_name = ?", candidate_name )
+      .where( "candidate_name_id = ?", candidate_name.id )
       .where( "votes = ?", votes )
       .first
       
     unless candidacy
       candidacy = Candidacy.new
-      candidacy.candidate_name = candidate_name
       candidacy.votes = votes if votes
       candidacy.election = election
       candidacy.party = party
+      candidacy.candidate_name = candidate_name
       candidacy.save
     end
   end
