@@ -2,13 +2,35 @@ drop table if exists candidacies;
 drop table if exists elections;
 drop table if exists constituencies;
 drop table if exists parties;
+drop table if exists candidate_names;
 drop table if exists general_elections;
 drop table if exists years;
+drop table if exists surnames;
+drop table if exists letters;
 
+create table letters (
+	id serial not null,
+	letter char(1) not null,
+	primary key (id)
+);
+create table surnames (
+	id serial not null,
+	surname varchar(255) not null,
+	letter_id int not null,
+	primary key (id),
+	constraint fk_letter foreign key (letter_id) references letters(id)
+);
 create table years (
 	id serial not null,
 	year int not null,
 	primary key (id)
+);
+create table candidate_names (
+	id serial not null,
+	name varchar(255) not null,
+	surname_id int not null,
+	primary key (id),
+	constraint fk_surname foreign key (surname_id) references surnames(id)
 );
 create table parties (
 	id serial not null,
@@ -41,11 +63,12 @@ create table elections (
 );
 create table candidacies (
 	id serial not null,
-	candidate_name varchar(255) not null,
 	votes int,
 	election_id int not null,
 	party_id int not null,
+	candidate_name_id int not null,
 	primary key (id),
 	constraint fk_election foreign key (election_id) references elections(id),
-	constraint fk_party foreign key (party_id) references parties(id)
+	constraint fk_party foreign key (party_id) references parties(id),
+	constraint fk_candidate_name foreign key (candidate_name_id) references candidate_names(id)
 );
