@@ -6,10 +6,11 @@ class Election < ApplicationRecord
   def candidacies
     Candidacy.find_by_sql(
     "
-      SELECT c.*, p.name as party_name
-      FROM candidacies c, parties p
+      SELECT c.*, p.name as party_name, cn.name as candidate_name_display
+      FROM candidacies c, parties p, candidate_names as cn
       WHERE c.election_id = #{self.id}
       AND c.party_id = p.id
+      AND c.candidate_name_id = cn.id
       ORDER BY c.votes DESC;
     "
     )
