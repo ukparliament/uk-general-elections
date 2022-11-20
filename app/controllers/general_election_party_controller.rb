@@ -32,5 +32,6 @@ class GeneralElectionPartyController < ApplicationController
         AND e.constituency_id = con.id
       "
     )
+    @title = "#{@general_election.name} - Parties - #{@party.name}"
   end
 end
