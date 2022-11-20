@@ -1,0 +1,2 @@
+module CandidateNameHelper
+end
