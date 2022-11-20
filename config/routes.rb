@@ -24,6 +24,15 @@ Rails.application.routes.draw do
   get 'parties' => 'party#index', as: :party_list
   get 'parties/:party' => 'party#show', as: :party_show
   
+  get 'letters' => 'letter#index', as: :letter_list
+  get 'letters/:letter' => 'letter#show', as: :letter_show
+  
+  get 'surnames' => 'surname#index', as: :surname_list
+  get 'surnames/:surname' => 'surname#show', as: :surname_show
+  
+  get 'candidate-names' => 'candidate_name#index', as: :candidate_name_list
+  get 'candidate-names/:candidate_name' => 'candidate_name#show', as: :candidate_name_show
+  
   get 'meta' => 'meta#index', as: :meta_list
   get 'meta/schema' => 'meta#schema', as: :meta_schema
 end
