@@ -23,4 +23,7 @@ Rails.application.routes.draw do
   
   get 'parties' => 'party#index', as: :party_list
   get 'parties/:party' => 'party#show', as: :party_show
+  
+  get 'meta' => 'meta#index', as: :meta_list
+  get 'meta/schema' => 'meta#schema', as: :meta_schema
 end
