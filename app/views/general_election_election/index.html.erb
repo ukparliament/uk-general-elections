@@ -1,0 +1,7 @@
+<%= content_tag( 'p', "Voting: #{@general_election.voting_dates}" ) %>
+
+<%= content_tag( 'p', "#{link_to( 'Elections', general_election_election_list_url)} &bullet; #{link_to( 'Parties', general_election_party_list_url)}".html_safe ) %>
+
+<ol>
+	<%= render :partial => 'election/election', :collection => @general_election.elections %>
+</ol>

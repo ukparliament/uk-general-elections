@@ -1,0 +1,5 @@
+<tr>
+	<%= content_tag(  'td', candidacy.candidate_name ) %>
+	<%= content_tag(  'td', candidacy.party_name ) %>
+	<%= content_tag(  'td', candidacy.votes ) unless @election.is_uncontested %>
+</tr>

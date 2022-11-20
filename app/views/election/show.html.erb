@@ -1,0 +1,45 @@
+<table>
+	<tbody>
+		<tr>
+			<%= content_tag( 'th', 'Year:' ) %>
+			<%= content_tag( 'td', link_to( @election.year, year_show_url( :year => @election.year_id ) ) ) %>
+		</tr>
+		<tr>
+			<%= content_tag( 'th', 'General election:' ) %>
+			<%= content_tag( 'td', link_to( @election.general_election_name, general_election_show_url( :general_election => @election.general_election_id ) ) ) %>
+		</tr>
+		<tr>
+			<%= content_tag( 'th', 'Constituency:' ) %>
+			<%= content_tag( 'td', link_to( @election.constituency_name, constituency_show_url( :constituency => @election.constituency_id ) ) ) %>
+		</tr>
+		<tr>
+			<%= content_tag( 'th', 'Turnout:' ) %>
+			<td>
+				<% if @election.is_uncontested -%>
+					Election uncontested
+				<% else -%>
+					<%= @election.turnout %>%
+				<% end -%>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+
+
+
+<%= content_tag( 'h2', 'Results' ) %>
+<table>
+	<thead>
+		<tr>
+			<%= content_tag( 'td', 'Candidate' ) %>
+			<%= content_tag( 'td', 'Party' ) %>
+			<%= content_tag( 'td', 'Votes' ) unless @election.is_uncontested %>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render :partial => 'candidacy/candidacy', :collection => @election.candidacies %>
+	</tbody>
+</table>

@@ -1,0 +1,5 @@
+<%= content_tag( 'h2', 'General elections' ) %>
+
+<ol>
+	<%= render :partial => 'general_election/general_election', :collection => @year.general_elections %>
+</ol>
