@@ -19,7 +19,7 @@ task :import => :environment do
     votes = row[8] if row[8]
     turnout = row[9] if row[9]
     letter_string = candidate_name_string.first
-    surname_string = candidate_name_string.split( ',' ).first
+    surname_string = candidate_name_string.split( ',' ).first.strip
     
     letter = Letter.find_by_letter( letter_string )
     unless letter
