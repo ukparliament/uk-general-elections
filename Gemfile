@@ -3,10 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rename'
 
-ruby '2.7.3'
+
 gem 'rails', '7.0.2.4'
 
-#ruby "3.1.2"
+ruby "3.2.1"
 #gem "rails", "~> 7.0.3"
 
 
