@@ -3,21 +3,27 @@
 	<head>
 		<%= content_tag( 'title', @title || 'UK Elections' ) %>
 		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<style>
+		body {font-family: system-ui,sans-serif;padding:0.25rem 0.75rem;font-size:1.2rem;line-height:1.4;max-width:48rem;margin:0.5rem auto;}
+		cite {font-style: normal;}
+		h1, h2 {font-weight:normal;}
+		main {padding:2rem 0;}
+		</style>
 	</head>
 	<body>
 		<header>
 			<%= content_tag( 'p', link_to( 'UK general election results 1832 - 2019', home_url ), :class=> 'site-title' ) %>
 			<%= content_tag( 'p', "#{link_to( 'Years', year_list_url )} &mdash; #{link_to( 'General elections', general_election_list_url )} &mdash; #{link_to( 'Constituencies', constituency_list_url )} &mdash; #{link_to( 'Parties', party_list_url )} &mdash; #{link_to( 'Candidate names', letter_list_url ) }".html_safe ) %>
+			<h1>UK Elections</h1>
 		</header>
 		<main>
-			<%= content_tag( 'h1', @title || 'UK Elections' ) %>
+			
    	 		<%= yield %>
 		</main>
 		<footer>
-			<%= content_tag( 'h2', 'Based on data from' ) %>
-			<%= content_tag( 'p', "umit, r. 2022. uk house of commons election 
-results at constituency level. harvard dataverse, version 4.0. 
-available at #{link_to( 'https://doi.org/10.7910/DVN/S83HOA', 'https://doi.org/10.7910/DVN/S83HOA' )}.".html_safe ) %>
+		
+			<p>Based on data from: <cite>Umit, Resul, 2022, <q>UK House of Commons Election Results at Constituency Level</q>, <a href="https://doi.org/10.7910/DVN/S83HOA">https://doi.org/10.7910/DVN/S83HOA</a>, Harvard Dataverse, V4, UNF:6:MsqT+6AwIpZsqDgcTVcV/A== [fileUNF]</cite></p>
+			
 			<p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
 			  <a rel="license"
 			     href="http://creativecommons.org/publicdomain/zero/1.0/">
