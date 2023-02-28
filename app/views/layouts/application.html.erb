@@ -13,7 +13,7 @@
 	<body>
 		<header>
 			<%= content_tag( 'p', link_to( 'UK general election results 1832 - 2019', home_url ), :class=> 'site-title' ) %>
-			<%= content_tag( 'p', "#{link_to( 'Years', year_list_url )} &mdash; #{link_to( 'General elections', general_election_list_url )} &mdash; #{link_to( 'Constituencies', constituency_list_url )} &mdash; #{link_to( 'Parties', party_list_url )} &mdash; #{link_to( 'Candidate names', letter_list_url ) }".html_safe ) %>
+			<%= content_tag( 'nav', "#{link_to( 'Years', year_list_url )} &middot; #{link_to( 'General elections', general_election_list_url )} &middot; #{link_to( 'Constituencies', constituency_list_url )} &middot; #{link_to( 'Parties', party_list_url )} &middot; #{link_to( 'Candidate names', letter_list_url ) }".html_safe ) %>
 			<h1>UK Elections</h1>
 		</header>
 		<main>
