@@ -7,7 +7,7 @@ end
 
 task :import => :environment do
   puts "importing election data"
-  CSV.foreach( 'db/data/download.tsv', :col_sep => "\t" ) do |row|
+  CSV.foreach( 'db/data/download.csv' ) do |row|
     general_election_name = row[0].strip
     election_year = row[1].strip
     voting_start_on = row[2].to_date
