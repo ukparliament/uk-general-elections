@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
+
+  get '' => 'home#index', as: :root
   get 'uk-general-elections' => 'home#index', as: :home
   
   get 'uk-general-elections/years' => 'year#index', as: :year_list
