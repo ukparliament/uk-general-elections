@@ -9,6 +9,8 @@ gem 'rails', '7.0.2.4'
 ruby "3.2.1"
 #gem "rails", "~> 7.0.3"
 
+gem 'rack-attack'
+
 
 
 
