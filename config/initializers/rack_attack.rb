@@ -14,3 +14,5 @@ Rack::Attack.safelist_ip("104.16.0.0/13")
 Rack::Attack.safelist_ip("104.24.0.0/14")
 Rack::Attack.safelist_ip("172.64.0.0/13")
 Rack::Attack.safelist_ip("131.0.72.0/22")
+
+Rack::Attack.blocklist_ip("*")
