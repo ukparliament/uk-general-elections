@@ -11,11 +11,11 @@ end
 
 cloudflare_ips = ['51.137.96.34', '172.70.174.165', '162.158.78.229', '162.158.79.5', '172.69.43.244']
 
-safelist_ip('51.137.96.34')
-safelist_ip('172.70.174.165')
-safelist_ip('162.158.78.229')
-safelist_ip('162.158.79.5')
-safelist_ip('172.69.43.244')
+Rack::Attack.safelist_ip('51.137.96.34')
+Rack::Attack.safelist_ip('172.70.174.165')
+Rack::Attack.safelist_ip('162.158.78.229')
+Rack::Attack.safelist_ip('162.158.79.5')
+Rack::Attack.safelist_ip('172.69.43.244')
 
 
 Rack::Attack.safelist( 'allow from cloudflare' ) do |request|
