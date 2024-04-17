@@ -23,7 +23,7 @@ class Rack::Attack
 
 Rack::Attack.safelist( 'allow from cloudflare' ) do |request|
   
-  puts request.headers
+  puts request.header
   
   puts "==== allowed ===="
   puts request.ip
