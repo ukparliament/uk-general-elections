@@ -25,7 +25,9 @@ Rack::Attack.safelist_ip('162.158.78.237')
 Rack::Attack.safelist_ip('162.158.78.106')
 Rack::Attack.safelist_ip('162.158.79.231')
 Rack::Attack.safelist_ip('172.71.242.77')
-Rack::Attack.safelist_ip('172.71.242.77')
+Rack::Attack.safelist_ip('172.69.194.216')
+
+
 
 
 
