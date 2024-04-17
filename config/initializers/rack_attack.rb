@@ -20,7 +20,6 @@ class Rack::Attack
     if req.proxied?
       false
     else
-      req.log :warn
       true
     end
   end
