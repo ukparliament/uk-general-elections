@@ -1,27 +1,21 @@
 class Rack::Attack
   
   # We safe list localhost.
-Rack::Attack.safelist( 'allow from localhost' ) do |req|
-  '127.0.0.1' == req.ip || '::1' == req.ip
-end
+  Rack::Attack.safelist( 'allow from localhost' ) do |req|
+    '127.0.0.1' == req.ip || '::1' == req.ip
+  end
 
-# We build an array of Cloudflare IPs taken from [the Cloudflare IP range page](https://www.cloudflare.com/en-gb/ips/).
+  # We build an array of Cloudflare IPs taken from [the Cloudflare IP range page](https://www.cloudflare.com/en-gb/ips/).
 #cloudflare_ips = ['2400:cb00::/32', '2606:4700::/32', '2803:f800::/32', '2405:b500::/32', '2405:8100::/32', '2a06:98c0::/29','2c0f:f248::/32', '173.245.48.0/20', '103.21.244.0/22', '103.22.200.0/22', '103.31.4.0/22','141.101.64.0/18', '108.162.192.0/18', '190.93.240.0/20', '188.114.96.0/20', '197.234.240.0/22', '198.41.128.0/17', '162.158.0.0/15', '104.16.0.0/13', '104.24.0.0/14', '172.64.0.0/13', '131.0.72.0/22']
 
-# We build an array of Cloudflare IPs taken from [the Cloudflare IP range page](https://www.cloudflare.com/en-gb/ips/).
-#cloudflare_ips = ['2400:cb00::', '2606:4700::', '2803:f800::', '2405:b500::', '2405:8100::', '2a06:98c0::','2c0f:f248::', '173.245.48.0', '103.21.244.0', '103.22.200.0', '103.31.4.0','141.101.64.0', '108.162.192.0', '190.93.240.0', '188.114.96.0', '197.234.240.0', '198.41.128.0', '162.158.0.0', '104.16.0.0', '104.24.0.0', '172.64.0.0', '131.0.72.0']
+  # We build an array of Cloudflare IPs taken from [the Cloudflare IP range page](https://www.cloudflare.com/en-gb/ips/).
+  cloudflare_ips = ['2400:cb00::', '2606:4700::', '2803:f800::', '2405:b500::', '2405:8100::', '2a06:98c0::','2c0f:f248::', '173.245.48.0', '103.21.244.0', '103.22.200.0', '103.31.4.0','141.101.64.0', '108.162.192.0', '190.93.240.0', '188.114.96.0', '197.234.240.0', '198.41.128.0', '162.158.0.0', '104.16.0.0', '104.24.0.0', '172.64.0.0', '131.0.72.0']
 
-class Request < ::Rack::Request
-  def remote_ip      
-    @remote_ip ||= (env['HTTP_CF_CONNECTING_IP'] || env['action_dispatch.remote_ip'] || ip).to_s    
+  class Request < ::Rack::Request
+    def remote_ip      
+      @remote_ip ||= (env['HTTP_CF_CONNECTING_IP'] || env['action_dispatch.remote_ip'] || ip).to_s
+    end
   end
-end
-
-cloudflare_ips = ['51.137.96.34', '172.70.174.165', '162.158.78.229', '162.158.79.5', '172.69.43.244', '162.158.78.246']
-
-
-Rack::Attack.safelist_ip('2a00:23c6:a117:6301:41b1:82a0:5ed3:9cf4')
-
 
 
 
@@ -29,7 +23,7 @@ Rack::Attack.safelist_ip('2a00:23c6:a117:6301:41b1:82a0:5ed3:9cf4')
 
 Rack::Attack.safelist( 'allow from cloudflare' ) do |request|
   
-  puts request.inspect
+  puts request.headers
   
   puts "==== allowed ===="
   puts request.ip
