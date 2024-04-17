@@ -12,21 +12,32 @@ end
 cloudflare_ips = ['51.137.96.34', '172.70.174.165', '162.158.78.229']
 
 # We build a list blocking all IPs that are not in the Cloudflare IP array.
-Rack::Attack.blocklist( 'allow from cloudflare only' ) do |request|
+#Rack::Attack.blocklist( 'allow from cloudflare only' ) do |request|
   
-  puts "========"
-  puts request.ip
-  puts request.ip.class
-  if cloudflare_ips.include?( request.ip )
-    puts "this shouldn't be blocked"
-  else
-    puts "BLOCK"
-  end
+  #puts "========"
+  #puts request.ip
+  #puts request.ip.class
+  #if cloudflare_ips.include?( request.ip )
+    #puts "this shouldn't be blocked"
+    #else
+    #puts "BLOCK"
+    #end
   
   
   
   # If the Cloudflare IPs array does not include the request IP, we block it.
-  !cloudflare_ips.include?( request.ip )
+  #!cloudflare_ips.include?( request.ip )
+  #end
+
+
+Rack::Attack.safelist( 'allow from cloudflare only' ) do |request|
+  
+  puts "====ccccc===="
+  puts request.ip
+  puts request.ip.class
+  
+  
+  
+  # If the Cloudflare IPs array does not include the request IP, we block it.
+  cloudflare_ips.include?( request.ip )
 end
-
-
