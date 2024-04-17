@@ -45,7 +45,7 @@ Rack::Attack.safelist_ip('172.69.195.16')
 
 Rack::Attack.safelist( 'allow from cloudflare' ) do |request|
   
-  puts req.remote_ip
+  puts request.remote_ip
   
   puts "==== allowed ===="
   puts request.ip
