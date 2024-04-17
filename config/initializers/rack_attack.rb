@@ -21,36 +21,22 @@ class Rack::Attack
 
 
 
-Rack::Attack.safelist( 'allow from cloudflare' ) do |request|
-  
-  puts request.header
-  
-  puts "==== allowed ===="
-  puts request.ip
-  if cloudflare_ips.include?( request.ip )
-    puts "yup"
-  else
-    puts "nope"
-  end
-  
-  # If the Cloudflare IPs array includes the request IP, we add it to the allow list.
-  cloudflare_ips.include?( request.ip )
-end
 
-# We build a list blocking all IPs that are not in the Cloudflare IP array.
-Rack::Attack.blocklist( 'block any none cloudflare' ) do |request|
+
+  # We build a list blocking all IPs that are not in the Cloudflare IP array.
+  Rack::Attack.blocklist( 'block any none cloudflare' ) do |request|
   
-  puts "==== blocked ===="
-  puts request.ip
-  if cloudflare_ips.include?( request.ip )
-    puts "nope"
-  else
-    puts "yup"
+    puts "==== blocked ===="
+    puts request.ip
+    if cloudflare_ips.include?( request.ip )
+      puts "nope"
+    else
+      puts "yup"
+    end
+  
+    # If the Cloudflare IPs array does not include the request IP, we block it.
+    !cloudflare_ips.include?( request.ip )
   end
-  
-  # If the Cloudflare IPs array does not include the request IP, we block it.
-  !cloudflare_ips.include?( request.ip )
-end
 end
 
 
