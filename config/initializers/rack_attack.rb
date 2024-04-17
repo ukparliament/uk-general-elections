@@ -17,7 +17,15 @@ Rack::Attack.safelist_ip('162.158.78.229')
 Rack::Attack.safelist_ip('162.158.78.246')
 Rack::Attack.safelist_ip('162.158.79.5')
 Rack::Attack.safelist_ip('172.69.43.244')
-
+Rack::Attack.safelist_ip('162.158.78.228')
+Rack::Attack.safelist_ip('162.158.79.160')
+Rack::Attack.safelist_ip('162.158.78.219')
+Rack::Attack.safelist_ip('162.158.78.250')
+Rack::Attack.safelist_ip('162.158.78.237')
+Rack::Attack.safelist_ip('162.158.78.106')
+Rack::Attack.safelist_ip('162.158.79.231')
+Rack::Attack.safelist_ip('172.71.242.77')
+Rack::Attack.safelist_ip('172.71.242.77')
 
 
 
