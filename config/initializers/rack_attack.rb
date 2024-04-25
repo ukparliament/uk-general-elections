@@ -19,7 +19,7 @@ class Rack::Attack
     if request.proxied?
       false
     else
-      true
+      #true
     end
   end
 end
