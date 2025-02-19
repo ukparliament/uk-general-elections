@@ -8,6 +8,8 @@ gem "rails", "~> 8.0.1"
 gem 'puma'
 gem 'pg'
 
+gem 'csv'
+
 
 
 
