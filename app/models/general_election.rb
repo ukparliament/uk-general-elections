@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: general_elections
+#
+#  id              :integer          not null, primary key
+#  name            :string(255)      not null
+#  voting_end_on   :date             not null
+#  voting_start_on :date             not null
+#  year_id         :integer          not null
+#
+# Foreign Keys
+#
+#  fk_year  (year_id => years.id)
+#
 class GeneralElection < ApplicationRecord
   
   belongs_to :year

@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: surnames
+#
+#  id        :integer          not null, primary key
+#  surname   :string(255)      not null
+#  letter_id :integer          not null
+#
+# Foreign Keys
+#
+#  fk_letter  (letter_id => letters.id)
+#
 class Surname < ApplicationRecord
   
   belongs_to :letter
