@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: elections
+#
+#  id                  :integer          not null, primary key
+#  is_uncontested      :boolean          default(FALSE)
+#  turnout             :float(24)
+#  constituency_id     :integer          not null
+#  general_election_id :integer          not null
+#
+# Foreign Keys
+#
+#  fk_constituency      (constituency_id => constituencies.id)
+#  fk_general_election  (general_election_id => general_elections.id)
+#
 class Election < ApplicationRecord
   
   belongs_to :general_election

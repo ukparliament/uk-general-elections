@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: candidate_names
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)      not null
+#  surname_id :integer          not null
+#
+# Foreign Keys
+#
+#  fk_surname  (surname_id => surnames.id)
+#
 class CandidateName < ApplicationRecord
   
   belongs_to :surname

@@ -1,3 +1,10 @@
+# == Schema Information
+#
+# Table name: parties
+#
+#  id   :integer          not null, primary key
+#  name :string(255)      not null
+#
 class Party < ApplicationRecord
   
   def general_elections

@@ -1,3 +1,10 @@
+# == Schema Information
+#
+# Table name: constituencies
+#
+#  id   :integer          not null, primary key
+#  name :string(255)      not null
+#
 class Constituency < ApplicationRecord
   
   def elections
