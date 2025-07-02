@@ -37,4 +37,5 @@ Rails.application.routes.draw do
   
   get 'uk-general-elections/meta' => 'meta#index', as: :meta_list
   get 'uk-general-elections/meta/schema' => 'meta#schema', as: :meta_schema
+  get 'uk-general-elections/meta/cookies' => 'meta#cookies', as: :meta_cookies
 end
