@@ -9,6 +9,6 @@ describe "smoke test", type: :system do
 
   it 'home page loads' do
     visit root_path
-    expect(page).to have_content("UK general election results 1832")
+    expect(page).to have_content("UK General Elections Results 1832 - 2019")
   end
 end
