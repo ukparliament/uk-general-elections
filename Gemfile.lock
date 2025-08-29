@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/ukparliament/design-assets.git
+  revision: 2c6baf3aec8c3e7091e03297d509b5e131aef35e
+  tag: 0.2.17
+  glob: library_design/*.gemspec
+  specs:
+    library_design (0.2.17)
+      rack-cors (~> 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -144,6 +153,10 @@ GEM
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
+    propshaft (1.2.1)
+      actionpack (>= 7.0.0)
+      activesupport (>= 7.0.0)
+      rack
     psych (5.2.6)
       date
       stringio
@@ -154,6 +167,9 @@ GEM
     rack (3.1.16)
     rack-attack (6.7.0)
       rack (>= 1.0, < 4)
+    rack-cors (3.0.0)
+      logger
+      rack (>= 3.0.14)
     rack-session (2.1.1)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
@@ -254,7 +270,9 @@ DEPENDENCIES
   capybara
   csv
   debug
+  library_design!
   pg
+  propshaft
   puma
   rack-attack
   rails (~> 8.0.2)
