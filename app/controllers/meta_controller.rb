@@ -10,5 +10,7 @@ class MetaController < ApplicationController
   
   def cookies
     @title = 'Cookies'
+
+    render 'library_design/meta/cookies'
   end
 end

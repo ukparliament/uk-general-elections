@@ -2,7 +2,7 @@ class PartyController < ApplicationController
   
   def index
     @parties = Party.all.order( 'name' )
-    @title = 'Parties'
+    @page_title = 'Parties'
   end
   
   def show

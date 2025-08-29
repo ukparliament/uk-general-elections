@@ -6,6 +6,12 @@ ruby file: '.ruby-version'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "rails", "~> 8.0.2"
 
+# The modern asset pipeline for Rails [https://github.com/rails/propshaft]
+gem "propshaft"
+
+# Design system gem
+gem "library_design", github: "ukparliament/design-assets", glob: 'library_design/*.gemspec', tag: "0.2.17"
+
 # App server
 gem 'puma'
 

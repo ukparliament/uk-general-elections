@@ -1,0 +1,8 @@
+<%= render 'library_design/header/header' do %>
+
+	<%= link_to( 'Years', year_list_url, :class => 'years' )  %>
+	<%= link_to( 'General elections', general_election_list_url, :class => 'general-elections' )  %>
+	<%= link_to( 'Constituencies', constituency_list_url, :class => 'constituencies' )  %>
+	<%= link_to( 'Parties', party_list_url, :class => 'parties' )  %>
+	<%= link_to( 'Candidate names', letter_list_url, :class => 'candidates' )  %>
+<% end %>
