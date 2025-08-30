@@ -31,9 +31,9 @@ class GeneralElection < ApplicationRecord
   def voting_dates
     voting_dates = ''
     if self.voting_start_on == self.voting_end_on
-      voting_dates = self.voting_start_on.strftime( '%d-%m-%Y')
+      voting_dates = self.voting_start_on.strftime( '%A, %-d %B %Y')
     else
-      voting_dates = "#{self.voting_start_on.strftime( '%d-%m-%Y')} - #{self.voting_end_on.strftime( '%d-%m-%Y')}"
+      voting_dates = "#{self.voting_start_on.strftime( '%A, %-d %B %Y')} to #{self.voting_end_on.strftime( '%A, %-d %B %Y')}"
     end
     voting_dates
   end

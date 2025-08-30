@@ -1,7 +1,6 @@
 class YearController < ApplicationController
   
   def index
-    @title = 'Years'
     @years = Year.find_by_sql(
       "
         SELECT y.*, COUNT(ge.id) as general_election_count
@@ -11,11 +10,21 @@ class YearController < ApplicationController
         ORDER BY y.year
       "
     )
+    
+    @page_title = 'Years'
+    @description = 'Years having general elections'
+    @section = 'years'
+    @crumb << { label: @page_title, url: nil }
   end
   
   def show
     year = params[:year]
     @year = Year.find( year )
-    @title = @year.year
+    
+    @page_title = "General elections in #{@year.year}"
+    @description = "UK general elections in #{@year.year}."
+    @section = 'years'
+    @crumb << { label: 'Years', url: year_list_url }
+    @crumb << { label: @year.year, url: year_list_url }
   end
 end

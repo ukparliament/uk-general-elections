@@ -1,3 +1,4 @@
-<ol>
+<%= content_tag( 'p', list_item_count_sentence( 'year', @years.size ) ) %>
+<ol class="unnumbered">
 	<%= render :partial => 'year', :collection => @years %>
 </ol>

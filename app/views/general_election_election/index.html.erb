@@ -1,7 +1,7 @@
-<%= content_tag( 'p', "Voting: #{@general_election.voting_dates}" ) %>
+<%= render :partial => 'general_election/intro' %>
 
-<%= content_tag( 'p', "#{link_to( 'Elections', general_election_election_list_url)} &bullet; #{link_to( 'Parties', general_election_party_list_url)}".html_safe ) %>
+<%= content_tag( 'p', list_item_count_sentence( 'election', @general_election.elections.size ) ) %>
 
-<ol>
+<ol class="unnumbered">
 	<%= render :partial => 'election/election', :collection => @general_election.elections %>
 </ol>

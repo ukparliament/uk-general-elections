@@ -1,5 +1,7 @@
 <%= content_tag( 'p', "The source data contains the names of constituencies but no start date or end date. Boundary changes happening between 1832 and 2019 are not recorded. When new boundary sets are introduced, there may be a new constituency with the same name as an old constituency but a different geographical extent. This also is not recorded." ) %>
 
-<ol>
+<%= content_tag( 'p', list_item_count_sentence( 'constituency', @constituencies.size ) ) %>
+
+<ol class="unnumbered">
 	<%= render :partial => 'constituency', :collection => @constituencies %>
 </ol>
