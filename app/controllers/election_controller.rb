@@ -1,7 +1,6 @@
 class ElectionController < ApplicationController
   
   def index
-    @title = 'Constituency elections'
     @elections = Election.find_by_sql(
       "
         SELECT e.*, y.year AS year, ge.name AS general_election_name, c.name AS constituency_name
@@ -12,6 +11,9 @@ class ElectionController < ApplicationController
         ORDER BY y.year, ge.name, c.name;
       "
     )
+    @page_title = 'Elections'
+    @description = 'Elections.'
+    @crumb << {label: @page_title, url: nil}
   end
   
   def show
@@ -28,6 +30,12 @@ class ElectionController < ApplicationController
       ", election_id
     ]).first
 
-    @title = "#{@election.year} - #{@election.general_election_name} - #{@election.constituency_name}"
+    @page_title = "#{@election.general_election_name} - #{@election.constituency_name}"
+    @description = "Election in #{@election.constituency_name} held as part of the #{@election.general_election_name}."
+    @section = 'general-elections'
+    @crumb << {label: 'General elections', url: general_election_list_url}
+    @crumb << {label: @election.general_election_name, url: general_election_show_url( :general_election => @election.general_election )}
+    @crumb << {label: @election.constituency_name, url: nil}
+    
   end
 end
