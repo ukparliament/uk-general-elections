@@ -32,15 +32,11 @@ class Election < ApplicationRecord
   end
   
   def name_with_general_election
-    full_name = year.to_s
-    full_name += ' - '
-    full_name += general_election_name
+    general_election_name
   end
   
   def full_name
-    full_name = year.to_s
-    full_name += ' - '
-    full_name += general_election_name
+    full_name = general_election_name
     full_name += ' - '
     full_name += constituency_name
   end
