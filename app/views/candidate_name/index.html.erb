@@ -1,4 +1,7 @@
 <%= content_tag( 'p', 'A name is a not a person, a person is not a name.' ) %>
-<ol>
+
+<%= content_tag( 'p', list_item_count_sentence( 'candidate name', @candidate_names.size ) ) %>
+
+<ol class="unnumbered">
 	<%= render :partial => 'candidate_name', :collection => @candidate_names %>
 </ol>
