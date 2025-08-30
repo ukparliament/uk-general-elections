@@ -1,0 +1,6 @@
+<%= content_tag( 'p', "Voting: #{@general_election.voting_dates}" ) %>
+
+<%= render 'library_design/subnav/subnav' do %>
+	<%= link_to( 'Elections', general_election_show_url, :class => 'elections' ) %>
+	<%= link_to( 'Parties', general_election_party_list_url, :class => 'parties' ) %>
+<% end %>
