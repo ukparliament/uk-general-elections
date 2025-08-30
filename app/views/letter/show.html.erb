@@ -1,3 +1,5 @@
-<ol>
+<%= content_tag( 'p', list_item_count_sentence( 'family name', @letter.surnames.size ) ) %>
+
+<ol class="unnumbered">
 	<%= render :partial => 'surname/surname', :collection => @letter.surnames %>
 </ol>
