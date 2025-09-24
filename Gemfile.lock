@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/ukparliament/design-assets.git
-  revision: e44844d1fa7d356cb86c27f03fe75cda40badf87
-  tag: 0.3.1
+  revision: c06cbe373759e44fe3650578e673fa9ff5679922
+  tag: 0.3.6
   glob: library_design/*.gemspec
   specs:
     library_design (0.2.17)
