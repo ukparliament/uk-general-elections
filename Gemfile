@@ -10,7 +10,7 @@ gem "rails", "~> 8.0.2"
 gem "propshaft"
 
 # Design system gem
-gem "library_design", github: "ukparliament/design-assets", glob: 'library_design/*.gemspec', tag: "0.3.1"
+gem "library_design", github: "ukparliament/design-assets", glob: 'library_design/*.gemspec', tag: "0.3.13"
 
 # App server
 gem 'puma'
