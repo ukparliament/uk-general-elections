@@ -10,26 +10,16 @@
  */
  
  /* Main navigation active states */
-body.section-years nav#header-nav a.years {
-	border-bottom-color: #fff;
-}
-body.section-general-elections nav#header-nav a.general-elections {
-	border-bottom-color: #fff;
-}
-body.section-constituencies nav#header-nav a.constituencies {
-	border-bottom-color: #fff;
-}
-body.section-parties nav#header-nav a.parties {
-	border-bottom-color: #fff;
-}
+body.section-years nav#header-nav a.years,
+body.section-general-elections nav#header-nav a.general-elections,
+body.section-constituencies nav#header-nav a.constituencies,
+body.section-parties nav#header-nav a.parties,
 body.section-candidates nav#header-nav a.candidates {
 	border-bottom-color: #fff;
 }
 
 /* Secondary navigation active states */
-body.subsection-elections .subnav a.elections {
-	border-bottom-color: #CBC9CD;
-}
+body.subsection-elections .subnav a.elections,
 body.subsection-parties .subnav a.parties {
 	border-bottom-color: #CBC9CD;
 }
