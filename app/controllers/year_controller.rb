@@ -25,6 +25,6 @@ class YearController < ApplicationController
     @description = "UK general elections in #{@year.year}."
     @section = 'years'
     @crumb << { label: 'Years', url: year_list_url }
-    @crumb << { label: @year.year, url: year_list_url }
+    @crumb << { label: @year.year.to_s, url: nil }
   end
 end
