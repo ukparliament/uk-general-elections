@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-gb">
 	<head>
 		<%= render :partial => 'library_design/head/head' %>
 		<%= tag( 'base', :href => 'https://api.parliament.uk/uk-general-elections' ) if Rails.env.production? %>
 	</head>
 	<body class="section-<%= @section %> subsection-<%= @subsection %> brand-commons">
-		<%= render :partial => 'layouts/header/header' %>
-		<main class="container block block-page" id="main-content">
-			<h1><%= @page_title || $SITE_TITLE %></h1>
-			<%= yield %>
+		<%= render 'layouts/header/header' %>
+		<main class="block block-page" id="main-content">
+			<div class="inner-content container">
+				<%= render 'library_design/debug/debug' -%>
+				<h1><%= @multiline_page_title || @page_title || $SITE_TITLE %></h1>
+				<%= yield %>
+			</div>
 		</main>
-		<%= render 'library_design/footer' %>
+		<%= render 'layouts/footer/footer' %>
 	</body>
 </html>
