@@ -1,10 +1,10 @@
 GIT
   remote: https://github.com/ukparliament/design-assets.git
-  revision: f7ccbd1f83615e5ce64002ff9964dc9a08a8b2a2
-  tag: 0.5.0
+  revision: d2bb4e71f3afa545d2e60c850bed35428eab1531
+  tag: 0.6.2
   glob: library_design/*.gemspec
   specs:
-    library_design (0.5.0)
+    library_design (0.6.2)
       rack-cors (~> 3.0.0)
 
 GEM
@@ -170,7 +170,7 @@ GEM
     puma (7.1.0)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (3.2.3)
+    rack (3.2.4)
     rack-attack (6.8.0)
       rack (>= 1.0, < 4)
     rack-cors (3.0.0)
