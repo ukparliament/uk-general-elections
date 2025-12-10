@@ -12,7 +12,7 @@ class YearController < ApplicationController
     )
     
     @page_title = 'Years'
-    @description = 'Years having general elections'
+    @description = 'Years having general elections.'
     @section = 'years'
     @crumb << { label: @page_title, url: nil }
   end
