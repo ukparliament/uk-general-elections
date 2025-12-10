@@ -6,6 +6,7 @@ class GeneralElectionElectionController < ApplicationController
     
     @page_title = "#{@general_election.name} - elections"
     @description = "Elections taking place as part of the #{@general_election.name}."
+    @canonical_url = general_election_show_url
     @section = 'general-elections'
     @subsection = 'elections'
     @crumb << { label: 'General elections', url: general_election_list_url }

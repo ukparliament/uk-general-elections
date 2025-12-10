@@ -1,5 +1,5 @@
 <%= content_tag( 'p', list_item_count_sentence( 'general election', @general_elections.size ) ) %>
 
-<ol class="unnumbered">
+<ol class="unnumbered link-list">
 	<%= render :partial => 'general_election', :collection => @general_elections %>
 </ol>
