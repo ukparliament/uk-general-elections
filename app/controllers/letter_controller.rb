@@ -12,7 +12,7 @@ class LetterController < ApplicationController
     letter = params[:letter]
     @letter = Letter.find( letter )
     @page_title = "Candidate names - #{@letter.letter}"
-    @descripption = "Candidate names - #{@letter.letter}."
+    @description = "Candidate names - #{@letter.letter}."
     @section = 'candidates'
     @crumb << { label: 'Candidate names', url: letter_list_url }
     @crumb << { label: @letter.letter, url: nil }
